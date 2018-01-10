@@ -1,32 +1,49 @@
-import React, { Component, PropTypes } from 'react';
+import React from 'react';
+import { PropTypes } from 'prop-types'
 import styles from './FriendList.css';
 import FriendListItem from './FriendListItem';
+import Pagination from './Pagination';
 
-class FriendList extends Component {
-  render () {
-    return (
-      <ul className={styles.friendList}>
+const FriendList = ({friends, deleteFriend, starFriend,
+                        updateGender, actualPage, totalPages, updatePage}) => (
+    <div>
+        <ul className={styles.friendList}>
+            {
+                friends.map((friend, index) => {
+                    return (
+                        <FriendListItem
+                            key={index}
+                            id={friend.id}
+                            name={friend.name}
+                            starred={friend.starred}
+                            deleteFriend={deleteFriend}
+                            starFriend={starFriend}
+                            updateGender={updateGender}
+                            gender={friend.gender}
+                        />
+                    );
+                })
+            }
+        </ul>
         {
-          this.props.friends.map((friend, index) => {
-            return (
-              <FriendListItem
-                key={index}
-                id={index}
-                name={friend.name}
-                starred={friend.starred}
-                {...this.props.actions} />
-            );
-          })
+            totalPages > 1 &&
+                <Pagination
+                    actualPage={actualPage}
+                    totalPages={totalPages}
+                    updatePage={updatePage}
+            />
         }
-      </ul>
-    );
-  }
-
-}
+    </div>
+);
 
 FriendList.propTypes = {
-  friends: PropTypes.array.isRequired,
-  actions: PropTypes.object.isRequired
+    friends: PropTypes.array.isRequired,
+    deleteFriend: PropTypes.func.isRequired,
+    starFriend: PropTypes.func.isRequired,
+    updateGender: PropTypes.func.isRequired,
+    actualPage: PropTypes.number.isRequired,
+    totalPages: PropTypes.number.isRequired,
+    updatePage: PropTypes.func.isRequired
 };
 
 export default FriendList;

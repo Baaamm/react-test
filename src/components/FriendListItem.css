@@ -6,6 +6,9 @@
   display: flex;
 }
 
+:local(.friendListRow){
+  width: 100%;
+}
 :local(.friendInfos) {
   flex: 1 0 auto;
 }
@@ -19,8 +22,14 @@
 }
 
 :local(.btnAction), :local(.btnAction):active, :local(.btnAction):focus, :local(.btnAction):hover {
+  float: left;
   margin-right: 5px;
   color: #5C75B0;
+}
+
+:local(.selectedBox) {
+  width: 100px;
+  float: left;
 }
 
 button:focus {

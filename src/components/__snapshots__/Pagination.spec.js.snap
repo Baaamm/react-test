@@ -1,0 +1,42 @@
+exports[`test renders only with next button 1`] = `
+<div>
+  <button
+    className="btn btn-default undefined"
+    onClick={[Function]}>
+    <span>
+      next
+    </span>
+  </button>
+</div>
+`;
+
+exports[`test renders with next and prev button 1`] = `
+<div>
+  <button
+    className="btn btn-default undefined"
+    onClick={[Function]}>
+    <span>
+      pre
+    </span>
+  </button>
+  <button
+    className="btn btn-default undefined"
+    onClick={[Function]}>
+    <span>
+      next
+    </span>
+  </button>
+</div>
+`;
+
+exports[`test renders with only prev button 1`] = `
+<div>
+  <button
+    className="btn btn-default undefined"
+    onClick={[Function]}>
+    <span>
+      pre
+    </span>
+  </button>
+</div>
+`;

@@ -20,3 +20,19 @@ export function starFriend(id) {
     id
   };
 }
+
+export function updateGender(id, gender) {
+    return {
+        type: types.UPDATE_GENDER,
+        id,
+        gender
+    };
+}
+
+// for clearnes we can put it like the pull request in the seperate file for example PaginationActions.js
+export function updatePage(page) {
+    return {
+        type: types.UPDATE_PAGE,
+        page
+    };
+}

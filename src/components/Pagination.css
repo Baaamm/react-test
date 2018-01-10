@@ -1,0 +1,7 @@
+:local(.nextButton){
+  float: right;
+}
+
+:local(.prevButton){
+  float: left;
+}

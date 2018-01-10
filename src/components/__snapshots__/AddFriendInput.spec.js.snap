@@ -1,0 +1,8 @@
+exports[`test renders only AddFriendInput correct 1`] = `
+<input
+  autoFocus="true"
+  className="form-control"
+  onKeyDown={[Function]}
+  placeholder="Type the name of a friend"
+  type="text" />
+`;
